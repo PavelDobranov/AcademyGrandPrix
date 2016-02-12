@@ -10,7 +10,7 @@
     using Microsoft.Owin.Security.Cookies;
     using Microsoft.Owin.Security.OAuth;
 
-    using AcademyGrandPrix.Web.Models;
+    using AcademyGrandPrix.Data.Models;
 
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
@@ -30,7 +30,7 @@
         {
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
-            ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            User user = await userManager.FindAsync(context.UserName, context.Password);
 
             if (user == null)
             {

@@ -8,6 +8,7 @@ using Owin;
 using AcademyGrandPrix.Web.Models;
 using Microsoft.Owin.Security.OAuth;
 using AcademyGrandPrix.Web.Providers;
+using AcademyGrandPrix.Data.Models;
 
 namespace AcademyGrandPrix.Web
 {
@@ -36,7 +37,7 @@ namespace AcademyGrandPrix.Web
                 {
                     // Enables the application to validate the security stamp when the user logs in.
                     // This is a security feature which is used when you change a password or add an external login to your account.  
-                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
+                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, User>(
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
