@@ -12,6 +12,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using AcademyGrandPrix.Web.Models;
 using AcademyGrandPrix.Data.Models;
+using AcademyGrandPrix.Data;
 
 namespace AcademyGrandPrix.Web
 {
@@ -43,7 +44,7 @@ namespace AcademyGrandPrix.Web
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
-            var manager = new ApplicationUserManager(new UserStore<User>(context.Get<ApplicationDbContext>()));
+            var manager = new ApplicationUserManager(new UserStore<User>(context.Get<AcademyGrandPrixDbContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<User>(manager)
             {

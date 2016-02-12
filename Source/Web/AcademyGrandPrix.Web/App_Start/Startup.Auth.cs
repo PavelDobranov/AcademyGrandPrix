@@ -1,17 +1,18 @@
-﻿using System;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
-using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
-using Owin;
-using AcademyGrandPrix.Web.Models;
-using Microsoft.Owin.Security.OAuth;
-using AcademyGrandPrix.Web.Providers;
-using AcademyGrandPrix.Data.Models;
-
-namespace AcademyGrandPrix.Web
+﻿namespace AcademyGrandPrix.Web
 {
+    using System;
+
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+    using Microsoft.Owin;
+    using Microsoft.Owin.Security.Cookies;
+    using Microsoft.Owin.Security.OAuth;
+    using Owin;
+
+    using AcademyGrandPrix.Data;
+    using AcademyGrandPrix.Data.Models;
+    using AcademyGrandPrix.Web.Providers;
+
     public partial class Startup
     {
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
@@ -22,7 +23,7 @@ namespace AcademyGrandPrix.Web
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
+            app.CreatePerOwinContext(AcademyGrandPrixDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
 
