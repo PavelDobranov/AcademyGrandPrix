@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Data.Common.Models
+﻿namespace AcademyGrandPrix.Data.Common.Models
 {
     using System;
 
