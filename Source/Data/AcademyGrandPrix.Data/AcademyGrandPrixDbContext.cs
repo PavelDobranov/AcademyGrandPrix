@@ -15,7 +15,7 @@
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
+        
         public static AcademyGrandPrixDbContext Create()
         {
             return new AcademyGrandPrixDbContext();

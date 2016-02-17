@@ -58,6 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademyGrandPrixDbContext.cs" />
+    <Compile Include="Migrations\201602171452065_InitialCreate.cs" />
+    <Compile Include="Migrations\201602171452065_InitialCreate.Designer.cs">
+      <DependentUpon>201602171452065_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,10 +70,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AcademyGrandPrix.Data.Common\AcademyGrandPrix.Data.Common.csproj">
+      <Project>{650aa533-1477-4e6c-95a5-b094067c32ac}</Project>
+      <Name>AcademyGrandPrix.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AcademyGrandPrix.Data.Models\AcademyGrandPrix.Data.Models.csproj">
       <Project>{cab0c593-90c3-4b7b-ac5a-246ebf10b2f7}</Project>
       <Name>AcademyGrandPrix.Data.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602171452065_InitialCreate.resx">
+      <DependentUpon>201602171452065_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
