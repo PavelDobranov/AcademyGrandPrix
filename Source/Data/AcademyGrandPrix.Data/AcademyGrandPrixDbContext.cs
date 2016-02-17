@@ -15,6 +15,10 @@
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public virtual IDbSet<Track> Tracks { get; set; }
+
+        public virtual IDbSet<Image> Images { get; set; }
         
         public static AcademyGrandPrixDbContext Create()
         {
