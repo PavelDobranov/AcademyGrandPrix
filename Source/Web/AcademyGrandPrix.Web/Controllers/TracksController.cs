@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Linq;
+
+using System.Web.Mvc;
 
 using AcademyGrandPrix.Services.Data.Contracts;
 using AcademyGrandPrix.Web.ViewModels.Tracks;
@@ -8,6 +11,8 @@ namespace AcademyGrandPrix.Web.Controllers
 {
     public class TracksController : BaseController
     {
+        private const int ItemsPerPage = 3;
+
         private readonly ITracksService tracks;
 
         public TracksController(ITracksService tracks)
@@ -16,14 +21,24 @@ namespace AcademyGrandPrix.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult List()
+        public ActionResult List(int id = 1)
         {
-            var tracks = this.tracks.GetAll().To<TrackViewModel>();
+            int page = id;
+            int totalItemsCount = this.tracks.GetAll().Count();
+            int totalPages = (int)Math.Ceiling(totalItemsCount / (decimal)ItemsPerPage);
+            int skip = (page - 1) * ItemsPerPage;
+
+            var tracks = this.tracks.GetAll()
+                .OrderBy(x => x.Name)
+                .Skip(skip)
+                .Take(ItemsPerPage)
+                .To<TrackViewModel>()
+                .ToList();
 
             var viewModel = new PageableTracksListViewModel
             {
-                CurrentPage = 1,
-                TotalPages = 1,
+                CurrentPage = page,
+                TotalPages = totalPages,
                 Tracks = tracks
             };
 

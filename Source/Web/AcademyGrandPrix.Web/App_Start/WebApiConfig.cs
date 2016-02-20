@@ -14,7 +14,7 @@
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional });
+                defaults: new { area = "Api", id = RouteParameter.Optional });
         }
     }
 }
