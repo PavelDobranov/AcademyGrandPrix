@@ -1,4 +1,4 @@
-﻿namespace AcademyGrandPrix.Web.Infrastructure.Mappings
+﻿namespace AcademyGrandPrix.Web.Infrastructure.Mappings.Contracts
 {
     public interface IMapFrom<T> 
         where T : class
