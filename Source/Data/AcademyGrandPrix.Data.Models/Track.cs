@@ -23,7 +23,7 @@
 
         public TrackDifficultyType Difficulty { get; set; }
 
-        public virtual int MapId { get; set; }
+        public int MapId { get; set; }
 
         [ForeignKey("MapId")]
         public virtual Image Map { get; set; }

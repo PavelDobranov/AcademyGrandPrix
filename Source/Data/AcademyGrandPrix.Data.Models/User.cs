@@ -3,13 +3,24 @@
     using System;
     using System.Security.Claims;
     using System.Threading.Tasks;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
 
     using AcademyGrandPrix.Data.Common.Models;
-
+    using System.ComponentModel.DataAnnotations.Schema;
     public class User : IdentityUser, IDeletableEntity, IAuditInfo
     {
+        public User()
+        {
+            this.CreatedOn = DateTime.Now;
+        }
+
+        public int AvatarId { get; set; }
+
+        [ForeignKey("AvatarId")]
+        public virtual Image Avatar { get; set; }
+
         public DateTime CreatedOn { get; set; }
 
         public DateTime? DeletedOn { get; set; }
