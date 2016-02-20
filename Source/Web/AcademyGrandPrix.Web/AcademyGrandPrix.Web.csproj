@@ -173,9 +173,10 @@
   <ItemGroup>
     <Compile Include="App_Start\ApplicationUserManager.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="App_Start\EmailService.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\ApplicationSignInManager.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
@@ -276,6 +277,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\AcademyGrandPrix.Data.Common\AcademyGrandPrix.Data.Common.csproj">
+      <Project>{650aa533-1477-4e6c-95a5-b094067c32ac}</Project>
+      <Name>AcademyGrandPrix.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\AcademyGrandPrix.Data.Models\AcademyGrandPrix.Data.Models.csproj">
       <Project>{cab0c593-90c3-4b7b-ac5a-246ebf10b2f7}</Project>
       <Name>AcademyGrandPrix.Data.Models</Name>
