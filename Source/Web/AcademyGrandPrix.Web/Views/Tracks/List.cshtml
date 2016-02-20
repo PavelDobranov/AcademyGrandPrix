@@ -1,0 +1,29 @@
+﻿@model AcademyGrandPrix.Web.ViewModels.Tracks.PageableTracksListViewModel
+
+@{
+    ViewBag.Title = "List";
+}
+
+@foreach (var track in Model.Tracks)
+{
+    <div class="row">
+        <div class="card">
+            <div class="card-content">
+                <h3 class="card-title">@track.Name</h3>
+                <h3> @track.Length</h3>
+                <h3>@track.Difficulty</h3>
+            </div>
+            <div class="card-action">
+                <a class="btn btn-default" href="#">Details</a>
+            </div>
+        </div>
+    </div>
+}
+
+ @*public string Name { get; set; }
+
+        public double Length { get; set; }
+
+        public TrackDifficultyType Difficulty { get; set; }
+
+        public string MapUrl { get; set; }*@
