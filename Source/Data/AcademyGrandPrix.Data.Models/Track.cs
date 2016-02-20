@@ -9,10 +9,12 @@
     public class Track : BaseModel<int>
     {
         private ICollection<Image> photos;
+        private ICollection<Rating> ratings;
 
         public Track()
         {
             this.photos = new HashSet<Image>();
+            this.ratings = new HashSet<Rating>();
         }
 
         [Required]
@@ -32,6 +34,12 @@
         {
             get { return this.photos; }
             set { this.photos = value; }
+        }
+
+        public virtual ICollection<Rating> Ratings
+        {
+            get { return this.ratings; }
+            set { this.ratings = value; }
         }
     }
 }

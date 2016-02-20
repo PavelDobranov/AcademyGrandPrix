@@ -20,6 +20,8 @@
 
         public virtual IDbSet<Image> Images { get; set; }
 
+        public virtual IDbSet<Rating> Ratings { get; set; }
+
         public static AcademyGrandPrixDbContext Create()
         {
             return new AcademyGrandPrixDbContext();
