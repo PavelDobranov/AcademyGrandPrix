@@ -44,5 +44,14 @@
 
             return this.View(viewModel);
         }
+
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var track  = this.tracks.GetById(id);
+            var viewModel = this.Mapper.Map<TrackViewModel>(track);
+
+            return this.View(viewModel);
+        }
     }
 }

@@ -1,0 +1,25 @@
+﻿@model AcademyGrandPrix.Web.ViewModels.Tracks.TrackViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="card">
+        <div class="card-content">
+            <div class="col-md-4">
+                <img src="@Model.MapUrl" alt="Alternate Text" />
+            </div>
+            <div class="col-md-8">
+                <h3 class="card-title">Name: @Model.Name</h3>
+                <h3>Length: @Model.Length</h3>
+                <h3>Difficulty: @Model.Difficulty</h3>
+                <h3>Votes Count: @Model.VotesCount</h3>
+                <h3>Rating: @Model.Rating</h3>
+            </div>
+        </div>
+        <div class="card-action">
+            <a class="btn btn-default" href="#">Details</a>
+        </div>
+    </div>
+</div>

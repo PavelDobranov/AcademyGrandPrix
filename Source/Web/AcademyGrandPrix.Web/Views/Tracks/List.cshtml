@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="card-action">
-                <a class="btn btn-default" href="#">Details</a>
+                <a class="btn btn-default" href="/Tracks/Details/@track.Id">Details</a>
             </div>
         </div>
     </div>
@@ -36,14 +36,14 @@
                 </a>
             </li>
         }
-        @for (int i = 1; i < Model.TotalPages; i++)
+        @for (int page = 1; page < Model.TotalPages; page++)
         {
                 var className = string.Empty;
-                if (Model.CurrentPage == i)
+                if (Model.CurrentPage == page)
                 {
                     className = "active";
                 }
-                <li class="@className"><a href="/Tracks/List/@i">@i</a></li>
+                <li class="@className"><a href="/Tracks/List/@page">@page</a></li>
         }
         @if (Model.CurrentPage < Model.TotalPages)
         {
