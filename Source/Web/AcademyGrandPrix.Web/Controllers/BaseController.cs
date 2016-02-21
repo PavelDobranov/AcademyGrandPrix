@@ -2,6 +2,7 @@
 {
     using System.Web.Mvc;
 
+    using Microsoft.AspNet.Identity;
     using AutoMapper;
 
     using AcademyGrandPrix.Services.Web.Contracts;
@@ -13,10 +14,12 @@
 
         protected IMapper Mapper
         {
-            get
-            {
-                return AutoMapperConfig.Configuration.CreateMapper();
-            }
+            get { return AutoMapperConfig.Configuration.CreateMapper(); }
+        }
+
+        protected string UserId
+        {
+            get { return this.User.Identity.GetUserId(); }
         }
     }
 }
