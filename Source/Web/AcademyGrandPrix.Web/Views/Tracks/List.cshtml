@@ -9,10 +9,16 @@
     <div class="row">
         <div class="card">
             <div class="card-content">
-                <h3 class="card-title">@track.Name</h3>
-                <h3>@track.Length</h3>
-                <h3>@track.Difficulty</h3>
-                <h3>@track.Rating</h3>
+                <div class="col-md-4">
+                    <img src="@track.MapUrl" alt="Alternate Text" />
+                </div>
+                <div class="col-md-8">
+                    <h3 class="card-title">Name: @track.Name</h3>
+                    <h3>Length: @track.Length</h3>
+                    <h3>Difficulty: @track.Difficulty</h3>
+                    <h3>Votes Count: @track.VotesCount</h3>
+                    <h3>Rating: @track.Rating</h3>
+                </div>
             </div>
             <div class="card-action">
                 <a class="btn btn-default" href="#">Details</a>
