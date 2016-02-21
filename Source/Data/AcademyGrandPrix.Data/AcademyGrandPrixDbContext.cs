@@ -20,16 +20,15 @@
 
         public virtual IDbSet<Image> Images { get; set; }
 
-        public virtual IDbSet<Rating> Ratings { get; set; }
+        public virtual IDbSet<Vote> Votes { get; set; }
 
         public static AcademyGrandPrixDbContext Create()
         {
             return new AcademyGrandPrixDbContext();
         }
-        
+
         private void ApplyAuditInfoRules()
         {
-            // Approach via @julielerman: http://bit.ly/123661P
             foreach (var entry in this.ChangeTracker.Entries()
                     .Where(e => e.Entity is IAuditInfo && ((e.State == EntityState.Added) || (e.State == EntityState.Modified))))
             {
@@ -50,5 +49,20 @@
             this.ApplyAuditInfoRules();
             return base.SaveChanges();
         }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Vote>()
+        //        .HasRequired(c => c.Track)
+        //        .WithMany()
+        //        .WillCascadeOnDelete(false);
+
+        //    modelBuilder.Entity<Vote>()
+        //        .HasRequired(c => c.Author)
+        //        .WithMany()
+        //        .WillCascadeOnDelete(false);
+
+        //    base.OnModelCreating(modelBuilder);
+        //}
     }
 }

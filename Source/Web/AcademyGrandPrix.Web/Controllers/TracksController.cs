@@ -1,14 +1,14 @@
-﻿using System;
-using System.Linq;
-
-using System.Web.Mvc;
-
-using AcademyGrandPrix.Services.Data.Contracts;
-using AcademyGrandPrix.Web.ViewModels.Tracks;
-using AcademyGrandPrix.Web.Infrastructure.Mappings;
-
-namespace AcademyGrandPrix.Web.Controllers
+﻿namespace AcademyGrandPrix.Web.Controllers
 {
+    using System;
+    using System.Linq;
+
+    using System.Web.Mvc;
+
+    using AcademyGrandPrix.Services.Data.Contracts;
+    using AcademyGrandPrix.Web.ViewModels.Tracks;
+    using AcademyGrandPrix.Web.Infrastructure.Mappings;
+
     public class TracksController : BaseController
     {
         private const int ItemsPerPage = 3;

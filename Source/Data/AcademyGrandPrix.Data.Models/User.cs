@@ -1,6 +1,8 @@
 ﻿namespace AcademyGrandPrix.Data.Models
 {
     using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
@@ -8,18 +10,16 @@
     using Microsoft.AspNet.Identity.EntityFramework;
 
     using AcademyGrandPrix.Data.Common.Models;
-    using System.ComponentModel.DataAnnotations.Schema;
+
     public class User : IdentityUser, IDeletableEntity, IAuditInfo
     {
+        private ICollection<Vote> votes;
+
         public User()
         {
+            this.votes = new HashSet<Vote>();
             this.CreatedOn = DateTime.Now;
         }
-
-        public int AvatarId { get; set; }
-
-        [ForeignKey("AvatarId")]
-        public virtual Image Avatar { get; set; }
 
         public DateTime CreatedOn { get; set; }
 
@@ -28,6 +28,12 @@
         public bool IsDeleted { get; set; }
 
         public DateTime? ModifiedOn { get; set; }
+
+        public virtual ICollection<Vote> Votes
+        {
+            get { return this.votes; }
+            set { this.votes = value; }
+        }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
