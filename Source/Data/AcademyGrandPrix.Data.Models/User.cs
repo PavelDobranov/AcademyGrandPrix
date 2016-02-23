@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
@@ -14,10 +13,12 @@
     public class User : IdentityUser, IDeletableEntity, IAuditInfo
     {
         private ICollection<Vote> votes;
+        private ICollection<Competition> competitions;
 
         public User()
         {
             this.votes = new HashSet<Vote>();
+            this.competitions = new HashSet<Competition>();
             this.CreatedOn = DateTime.Now;
         }
 
@@ -33,6 +34,12 @@
         {
             get { return this.votes; }
             set { this.votes = value; }
+        }
+
+        public virtual ICollection<Competition> Competitions
+        {
+            get { return this.competitions; }
+            set { this.competitions = value; }
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)

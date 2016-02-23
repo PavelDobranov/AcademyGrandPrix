@@ -10,11 +10,13 @@
     {
         private ICollection<Image> photos;
         private ICollection<Vote> votes;
+        private ICollection<Competition> competitions;
 
         public Track()
         {
             this.photos = new HashSet<Image>();
             this.votes = new HashSet<Vote>();
+            this.competitions = new HashSet<Competition>();
         }
 
         [Required]
@@ -40,6 +42,12 @@
         {
             get { return this.votes; }
             set { this.votes = value; }
+        }
+
+        public virtual ICollection<Competition> Competitions
+        {
+            get { return this.competitions; }
+            set { this.competitions = value; }
         }
     }
 }
