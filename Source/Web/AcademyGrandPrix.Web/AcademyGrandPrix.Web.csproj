@@ -217,6 +217,7 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Competitions\CompetitionViewModel.cs" />
     <Compile Include="ViewModels\Competitions\CreateCompetitionViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
@@ -332,6 +333,8 @@
     <Content Include="Views\Shared\EditorTemplates\AgpDateTime.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\AgpSingleLineText.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\AgpBool.cshtml" />
+    <Content Include="Views\Competitions\Details.cshtml" />
+    <Content Include="Views\Shared\_Pagination.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\" />

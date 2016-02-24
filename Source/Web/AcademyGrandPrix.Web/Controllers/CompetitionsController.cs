@@ -47,5 +47,23 @@ namespace AcademyGrandPrix.Web.Controllers
 
             return this.View(model);
         }
+
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var competition = this.competitions.GetById(id);
+            var viewModel = this.Mapper.Map<CompetitionViewModel>(competition);
+
+            return this.View(viewModel);
+        }
+
+        public ActionResult Join(int id)
+        {
+            var userId = this.UserId;
+
+            this.competitions.AddContester(userId, id);
+
+            return this.Json(new { Success = true });
+        }
     }
 }

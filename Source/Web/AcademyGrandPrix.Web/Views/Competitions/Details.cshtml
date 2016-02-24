@@ -1,0 +1,68 @@
+﻿@model AcademyGrandPrix.Web.ViewModels.Competitions.CompetitionViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CompetitionViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TrackName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrackName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPublic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsPublic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LapsCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LapsCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDateTime)
+        </dd>
+
+    </dl>
+    @foreach (var contestor in Model.Contesters)
+    {
+        <div>@contestor</div>
+    }
+
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<button class="btn btn-default" data-action="join-competition">Join Competition</button>
+
+@section scripts {
+    <script>
+        $('button[data-action="join-competition"]').on('click', function () {
+            $.post('/Competitions/Join', { id: @Model.Id }, function(response) {
+                console.log(response);
+            });
+        });
+    </script>
+}
