@@ -230,6 +230,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Shared\PaginationViewModel.cs" />
     <Compile Include="ViewModels\Tracks\PageableTracksListViewModel.cs" />
     <Compile Include="ViewModels\Tracks\TrackViewModel.cs" />
     <Compile Include="ViewModels\Votes\CreateVoteInputModel.cs" />

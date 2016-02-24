@@ -1,0 +1,31 @@
+﻿@model AcademyGrandPrix.Web.ViewModels.Shared.PaginationViewModel
+
+<nav class="text-center">
+    <ul class="pagination">
+        @if (Model.CurrentPage > 1)
+        {
+            <li>
+                <a href="/Tracks/List/@(Model.CurrentPage - 1)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        }
+        @for (int page = 1; page < Model.TotalPages; page++)
+        {
+            var className = string.Empty;
+            if (Model.CurrentPage == page)
+            {
+                className = "active";
+            }
+            <li class="@className"><a href="@string.Format("{0}{1}", Model.Url, page)">@page</a></li>
+        }
+        @if (Model.CurrentPage < Model.TotalPages)
+        {
+            <li>
+                <a href="/Tracks/List/@(Model.CurrentPage+1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
