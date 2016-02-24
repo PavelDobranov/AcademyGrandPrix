@@ -1,0 +1,9 @@
+﻿@using AcademyGrandPrix.Web.ViewModels.Tracks
+
+@{
+    const string ControllerName = "Tracks";
+    ViewBag.Title = ControllerName;
+}
+
+<h2>@ViewBag.Title</h2>
+@(Html.FullFeaturedGrid<TrackViewModel>(ControllerName, m => m.Id))
