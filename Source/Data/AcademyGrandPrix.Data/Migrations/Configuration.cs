@@ -57,18 +57,18 @@ namespace AcademyGrandPrix.Data.Migrations
                 }
             }
 
-            if (!context.Images.Any())
-            {
-                var image = new Image
-                {
-                    FileExtension = ".jpeg",
-                    OriginalFileName = "track_name",
-                    UrlPath = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/BTCC_Brands06_PaddockHill.jpg/1024px-BTCC_Brands06_PaddockHill.jpg"
-                };
+            //if (!context.Images.Any())
+            //{
+            //    var image = new Image
+            //    {
+            //        FileExtension = ".jpeg",
+            //        OriginalFileName = "track_name",
+            //        UrlPath = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/BTCC_Brands06_PaddockHill.jpg/1024px-BTCC_Brands06_PaddockHill.jpg"
+            //    };
 
-                context.Images.Add(image);
-                context.SaveChanges();
-            }
+            //    context.Images.Add(image);
+            //    context.SaveChanges();
+            //}
 
             if (!context.Tracks.Any())
             {

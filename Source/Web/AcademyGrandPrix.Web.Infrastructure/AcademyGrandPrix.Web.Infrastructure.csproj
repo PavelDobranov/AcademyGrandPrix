@@ -34,12 +34,16 @@
       <HintPath>..\..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\AcademyGrandPrix.Web\Libraries\KendoUI\Kendo.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -72,6 +76,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HtmlHelpers\KendoHelpers.cs" />
+    <Compile Include="ImageProcessing\IProcessImageHelper.cs" />
+    <Compile Include="ImageProcessing\ProcessImageHelper.cs.cs" />
     <Compile Include="Mappings\AutoMapperConfig.cs" />
     <Compile Include="Mappings\Contracts\IHaveCustomMappings.cs" />
     <Compile Include="Mappings\Contracts\IMapFrom{T}.cs" />

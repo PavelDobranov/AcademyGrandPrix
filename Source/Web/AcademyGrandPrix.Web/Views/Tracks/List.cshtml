@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-content">
                 <div class="col-md-4">
-                    <img src="@track.MapUrl" alt="Alternate Text" />
+                    <img src="@Url.Action("Image", "Tracks", new { id = track.MapId.Value })" alt="@track.Name" class="img-responsive" />
                 </div>
                 <div class="col-md-8">
                     <h3 class="card-title">Name: @track.Name</h3>

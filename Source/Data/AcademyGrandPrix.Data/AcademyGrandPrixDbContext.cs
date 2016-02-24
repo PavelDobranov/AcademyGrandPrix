@@ -18,6 +18,8 @@
 
         public virtual IDbSet<Track> Tracks { get; set; }
 
+        public virtual IDbSet<Competition> Competitions { get; set; }
+
         public virtual IDbSet<Image> Images { get; set; }
 
         public virtual IDbSet<Vote> Votes { get; set; }

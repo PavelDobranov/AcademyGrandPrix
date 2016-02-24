@@ -8,13 +8,11 @@
 
     public class Track : BaseModel<int>
     {
-        private ICollection<Image> photos;
         private ICollection<Vote> votes;
         private ICollection<Competition> competitions;
 
         public Track()
         {
-            this.photos = new HashSet<Image>();
             this.votes = new HashSet<Vote>();
             this.competitions = new HashSet<Competition>();
         }
@@ -27,17 +25,11 @@
 
         public TrackDifficultyType Difficulty { get; set; }
 
-        public int MapId { get; set; }
+        public int? MapId { get; set; }
 
         [ForeignKey("MapId")]
         public virtual Image Map { get; set; }
-
-        public virtual ICollection<Image> Photos
-        {
-            get { return this.photos; }
-            set { this.photos = value; }
-        }
-
+        
         public virtual ICollection<Vote> Votes
         {
             get { return this.votes; }

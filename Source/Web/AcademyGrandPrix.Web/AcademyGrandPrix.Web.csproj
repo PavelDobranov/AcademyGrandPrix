@@ -198,6 +198,9 @@
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Administration\Controllers\TracksController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CompetitionsController.cs" />
@@ -231,6 +234,7 @@
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Shared\PaginationViewModel.cs" />
+    <Compile Include="ViewModels\Tracks\CreateTrackViewModel.cs" />
     <Compile Include="ViewModels\Tracks\PageableTracksListViewModel.cs" />
     <Compile Include="ViewModels\Tracks\TrackViewModel.cs" />
     <Compile Include="ViewModels\Votes\CreateVoteInputModel.cs" />
@@ -265,6 +269,9 @@
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
     <Content Include="Content\KendoUI\kendo.common-bootstrap.min.css.map" />
     <Content Include="Content\KendoUI\kendo.bootstrap.min.css.map" />
+    <Content Include="Areas\Administration\Views\web.config" />
+    <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration\Views\Tracks\Index.cshtml" />
     <None Include="Scripts\JQuery\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\JQuery\jquery-1.10.2.js" />
     <Content Include="Scripts\JQuery\jquery-1.10.2.min.js" />
@@ -336,9 +343,14 @@
     <Content Include="Views\Shared\EditorTemplates\AgpBool.cshtml" />
     <Content Include="Views\Competitions\Details.cshtml" />
     <Content Include="Views\Shared\_Pagination.cshtml" />
+    <Content Include="Views\Tracks\Create.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AgpNumber.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\" />
+    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Views\Admin\" />
+    <Folder Include="Areas\Administration\Views\KendoGridAdministration\" />
+    <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

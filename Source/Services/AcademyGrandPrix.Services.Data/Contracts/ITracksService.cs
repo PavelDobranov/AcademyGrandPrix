@@ -11,5 +11,7 @@
         Track GetById(int id);
 
         IQueryable<Track> GetByDifficulty(TrackDifficultyType difficulty);
+
+        void Create(string name, double length, TrackDifficultyType difficulty, byte[] imageContent, string imageFileExtension);
     }
 }

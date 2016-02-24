@@ -1,5 +1,6 @@
 ﻿namespace AcademyGrandPrix.Services.Data
 {
+    using System;
     using System.Linq;
 
     using AcademyGrandPrix.Data.Common;
@@ -28,6 +29,26 @@
         public IQueryable<Track> GetByDifficulty(TrackDifficultyType difficulty)
         {
             return this.tracks.All().Where(x => x.Difficulty == difficulty);
+        }
+
+        public void Create(string name, double length, TrackDifficultyType difficulty, byte[] imageContent, string imageFileExtension)
+        {
+            var trackMap = new Image
+            {
+                Content = imageContent,
+                FileExtension = imageFileExtension
+            };
+
+            var track = new Track
+            {
+                Name = name,
+                Length = length,
+                Difficulty = difficulty,
+                Map = trackMap
+            };
+
+            this.tracks.Add(track);
+            this.tracks.Save();
         }
     }
 }

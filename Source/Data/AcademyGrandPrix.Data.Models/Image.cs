@@ -1,19 +1,15 @@
 ﻿namespace AcademyGrandPrix.Data.Models
 {
+    using AcademyGrandPrix.Data.Common.Models;
+
     using System.ComponentModel.DataAnnotations;
 
-    public class Image
+    public class Image : BaseModel<int>
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required]
-        public string OriginalFileName { get; set; }
+        public byte[] Content { get; set; }
 
         [Required]
         public string FileExtension { get; set; }
-
-        [Required]
-        public string UrlPath { get; set; }
     }
 }
