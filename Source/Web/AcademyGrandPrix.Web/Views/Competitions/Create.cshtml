@@ -1,0 +1,28 @@
+﻿@model AcademyGrandPrix.Web.ViewModels.Competitions.CreateCompetitionViewModel
+@{
+    ViewBag.Title = "Create Competition";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (@Html.BeginForm("Create", "Competitions", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    
+    @Html.EditorFor(m => m.TrackId, new { ListItem = Model.Tracks });
+    @Html.EditorFor(m => m.Type);
+    @Html.EditorFor(m => m.IsPublic);
+    @Html.EditorFor(m => m.LapsCount);
+    @Html.EditorFor(m => m.StartDateTime);
+    @Html.EditorFor(m => m.EndDateTime);
+
+    <div class="form-group">
+        <div class="col-md-5 col-md-offset-2">
+            <input type="submit" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval");
+}

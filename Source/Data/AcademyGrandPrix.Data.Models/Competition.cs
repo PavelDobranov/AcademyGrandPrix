@@ -19,6 +19,8 @@
 
         public virtual Track Track { get; set; }
 
+        public CompetitionType Type { get; set; }
+
         public bool IsPublic { get; set; }
 
         public int LapsCount { get; set; }

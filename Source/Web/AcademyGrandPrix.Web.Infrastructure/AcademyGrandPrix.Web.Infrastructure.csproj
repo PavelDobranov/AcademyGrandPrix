@@ -34,8 +34,36 @@
       <HintPath>..\..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +76,31 @@
     <Compile Include="Mappings\Contracts\IHaveCustomMappings.cs" />
     <Compile Include="Mappings\Contracts\IMapFrom{T}.cs" />
     <Compile Include="Mappings\Contracts\IMapTo{T}.cs" />
+    <Compile Include="Populators\TracksPopulator.cs" />
+    <Compile Include="Populators\ITracksPopulator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Mappings\QueryableExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\AcademyGrandPrix.Data.Common\AcademyGrandPrix.Data.Common.csproj">
+      <Project>{650aa533-1477-4e6c-95a5-b094067c32ac}</Project>
+      <Name>AcademyGrandPrix.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\AcademyGrandPrix.Data.Models\AcademyGrandPrix.Data.Models.csproj">
+      <Project>{cab0c593-90c3-4b7b-ac5a-246ebf10b2f7}</Project>
+      <Name>AcademyGrandPrix.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\AcademyGrandPrix.Services.Data\AcademyGrandPrix.Services.Data.csproj">
+      <Project>{5fb13614-ec5c-4701-9336-117e0eff5d4f}</Project>
+      <Name>AcademyGrandPrix.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\AcademyGrandPrix.Services.Web\AcademyGrandPrix.Services.Web.csproj">
+      <Project>{336b4ac5-f3f2-4956-994b-92da88327571}</Project>
+      <Name>AcademyGrandPrix.Services.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

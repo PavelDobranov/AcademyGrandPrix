@@ -13,7 +13,8 @@
     using AcademyGrandPrix.Services.Web;
     using AcademyGrandPrix.Services.Web.Contracts;
     using AcademyGrandPrix.Web.Controllers;
-
+    using Infrastructure.Populators;
+    using Services.Data;
     public static class AutofacConfig
     {
         public static void RegisterAutofac()
@@ -64,6 +65,9 @@
             builder.RegisterGeneric(typeof(DbRepository<>))
                 .As(typeof(IDbRepository<>))
                 .InstancePerRequest();
+
+            var infrastructureAssembly = Assembly.GetAssembly(typeof(ITracksPopulator));
+            builder.RegisterAssemblyTypes(infrastructureAssembly).AsImplementedInterfaces();
 
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
                 .AssignableTo<BaseController>().PropertiesAutowired();

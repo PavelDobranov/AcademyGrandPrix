@@ -1,0 +1,13 @@
+﻿@model DateTime?
+
+<div class="form-group">
+    <div class="col-md-2">
+        @Html.LabelFor(m => m)
+    </div>
+    <div class="col-md-5">
+        @(Html.Kendo().DateTimePickerFor(m => m))
+    </div>
+    <div>
+        @Html.ValidationMessageFor(m => m)
+    </div>
+</div>

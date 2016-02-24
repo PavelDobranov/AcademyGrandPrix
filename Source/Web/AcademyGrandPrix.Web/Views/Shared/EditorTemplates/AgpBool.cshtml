@@ -1,0 +1,13 @@
+﻿@model bool
+
+<div class="form-group">
+    <div class="col-md-2">
+        @Html.LabelFor(m => m)
+    </div>
+    <div class="col-md-5">
+        @Html.CheckBoxFor(m => m)
+    </div>
+    <div>
+        @Html.ValidationMessageFor(m => m)
+    </div>
+</div>

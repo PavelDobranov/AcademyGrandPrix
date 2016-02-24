@@ -56,6 +56,10 @@
       <HintPath>..\..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Kendo.Mvc, Version=2016.1.112.545, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\KendoUI\Kendo.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -196,6 +200,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CompetitionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TracksController.cs" />
@@ -212,6 +217,7 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Competitions\CreateCompetitionViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\ConfigureTwoFactorViewModel.cs" />
@@ -231,20 +237,43 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\AGP-Ligo.jpg" />
+    <Content Include="Content\KendoUI\Bootstrap\editor.png" />
+    <Content Include="Content\KendoUI\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\KendoUI\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\KendoUI\Bootstrap\loading-image.gif" />
+    <Content Include="Content\KendoUI\Bootstrap\loading.gif" />
+    <Content Include="Content\KendoUI\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\KendoUI\Bootstrap\markers.png" />
+    <Content Include="Content\KendoUI\Bootstrap\markers_2x.png" />
+    <Content Include="Content\KendoUI\Bootstrap\slider-h.gif" />
+    <Content Include="Content\KendoUI\Bootstrap\slider-v.gif" />
+    <Content Include="Content\KendoUI\Bootstrap\sprite.png" />
+    <Content Include="Content\KendoUI\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\KendoUI\Bootstrap\sprite_kpi.png" />
+    <Content Include="Content\KendoUI\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="Content\KendoUI\kendo.bootstrap.min.css" />
+    <Content Include="Content\KendoUI\kendo.common-bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Libraries\KendoUI\Kendo.Mvc.dll" />
+    <Content Include="Libraries\KendoUI\Kendo.Mvc.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\KendoUI\kendo.common-bootstrap.min.css.map" />
+    <Content Include="Content\KendoUI\kendo.bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\KendoUI\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\KendoUI\kendo.web.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -283,6 +312,27 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Tracks\List.cshtml" />
     <Content Include="Views\Tracks\Details.cshtml" />
+    <Content Include="Views\Competitions\Create.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Email.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
+    <Content Include="Scripts\KendoUI\kendo.aspnetmvc.min.js.map" />
+    <Content Include="Scripts\KendoUI\kendo.web.min.js.map" />
+    <Content Include="Views\Shared\EditorTemplates\AgpDropDownList.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AgpEnum.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AgpInteger.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AgpDateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AgpSingleLineText.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AgpBool.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\" />
