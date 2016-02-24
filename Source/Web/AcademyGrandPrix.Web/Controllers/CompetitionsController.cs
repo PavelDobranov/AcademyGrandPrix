@@ -24,6 +24,8 @@ namespace AcademyGrandPrix.Web.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            // TODO: add optional Id for specific Tack
+
             var tracks = this.tracksPopulator.GetData();
 
             var viewModel = new CreateCompetitionViewModel
